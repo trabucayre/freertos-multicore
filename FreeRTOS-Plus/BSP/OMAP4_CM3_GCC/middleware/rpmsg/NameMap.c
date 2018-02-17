@@ -49,6 +49,7 @@ typedef unsigned int u32;
 
 struct rpmsg_ns_msg {
     char name[RPMSG_NAME_SIZE]; /* name of service including 0 */
+    char desc[RPMSG_NAME_SIZE]; /* description of remote service */
     u32 addr;                   /* address of the service */
     u32 flags;                  /* see below */
 } __packed;
