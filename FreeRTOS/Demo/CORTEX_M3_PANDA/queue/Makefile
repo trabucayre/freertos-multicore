@@ -1,3 +1,4 @@
+echo "stop" >  /sys/class/remoteproc/remoteproc1/stat2
 FREERTOS_SOURCE_DIR = ../../../../FreeRTOS
 FREERTOS_SOURCE_PLUS_DIR = ../../../../FreeRTOS-Plus
 APPLICATION_SOURCE_DIR = ./
@@ -36,12 +37,12 @@ OBJS =	$(BUILD_DIR)/list.o \
 	$(BUILD_DIR)/ammu.o \
 	$(APPLICATION_OBJS)
 
-all: ducati-m3-core0.xem3
+all: omap4-ipu-fw.xem3
 
 -include $(OBJS:.o=.d)
 
-ducati-m3-core0.xem3: $(OBJS) $(LIBGCC) $(LIBC) omap4_cm3.ld
-	$(LD) $(LDFLAGS) $(OBJS) $(LIBGCC) $(LIBC) -o ducati-m3-core0.xem3
+omap4-ipu-fw.xem3: $(OBJS) $(LIBGCC) $(LIBC) omap4_cm3.ld
+	$(LD) $(LDFLAGS) $(OBJS) $(LIBGCC) $(LIBC) -o omap4-ipu-fw.xem3
 
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR)
@@ -53,6 +54,6 @@ $(BUILD_DIR)/%.o: %.c $(BUILD_DIR)
 clean:
 	rm -f $(BUILD_DIR)/*.d
 	rm -f $(BUILD_DIR)/*.o
-	rm -f ducati-m3-core0.xem3
+	rm -f omap4-ipu-fw.xem3
 
 .PHONY: clean
