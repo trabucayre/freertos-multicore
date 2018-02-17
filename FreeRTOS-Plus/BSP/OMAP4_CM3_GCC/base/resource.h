@@ -187,7 +187,7 @@ struct resource_table {
  * Assign fixed RAM addresses to facilitate a fixed MMU table.
  * PHYS_MEM_IPC_VRING & PHYS_MEM_IPC_DATA MUST be together.
  */
-#define PHYS_MEM_IPC_VRING      0x99000000
+#define PHYS_MEM_IPC_VRING      0x98800000
 
 /*
 * Sizes of the virtqueues (expressed in number of buffers supported,
